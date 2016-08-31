@@ -52,3 +52,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+$route['news/(:any)'] = 'news/view/$1';      // NOTE hit '/index.php/news/foo' will goto News.view('foo')
+$route['news'] = 'news';                     // NOTE hit '/index.php/news' will goto News.index() @News.php
+$route['(:any)'] = 'pages/view/$1';          // NOTE hit '/index.php/any_char' will goto Pages.view('any_char') @Pages.php
+$route['default_controller'] = 'pages/view';
